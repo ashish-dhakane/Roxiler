@@ -76,7 +76,7 @@ A full-stack web application that allows users to submit ratings for stores regi
 
 ### stores
 | Column    | Type         | Constraints           |
-|-----------|--------------|-----------------------|
+|-----------|--------------|------------------------|
 | id        | SERIAL       | PRIMARY KEY           |
 | name      | VARCHAR(60)  | NOT NULL              |
 | email     | VARCHAR(255) | NOT NULL, UNIQUE      |
@@ -85,7 +85,7 @@ A full-stack web application that allows users to submit ratings for stores regi
 
 ### ratings
 | Column    | Type      | Constraints                          |
-|-----------|-----------|--------------------------------------|
+|-----------|-----------|---------------------------------------|
 | id        | SERIAL    | PRIMARY KEY                          |
 | user_id   | INTEGER   | NOT NULL, FK → users(id)             |
 | store_id  | INTEGER   | NOT NULL, FK → stores(id)            |
@@ -136,7 +136,7 @@ A full-stack web application that allows users to submit ratings for stores regi
 
 ### Auth
 | Method | Endpoint                  | Description              | Auth     |
-|--------|---------------------------|--------------------------|----------|
+|--------|---------------------------|---------------------------|----------|
 | POST   | /api/auth/signup          | Register normal user     | Public   |
 | POST   | /api/auth/login           | Login (all roles)        | Public   |
 | GET    | /api/auth/me              | Get current user         | Required |
@@ -144,7 +144,7 @@ A full-stack web application that allows users to submit ratings for stores regi
 
 ### Admin
 | Method | Endpoint                  | Description              | Auth     |
-|--------|---------------------------|--------------------------|----------|
+|--------|---------------------------|---------------------------|----------|
 | GET    | /api/admin/dashboard      | Dashboard stats          | Admin    |
 | POST   | /api/admin/users          | Create user              | Admin    |
 | POST   | /api/admin/stores         | Create store             | Admin    |
@@ -154,15 +154,15 @@ A full-stack web application that allows users to submit ratings for stores regi
 
 ### Stores (Normal User)
 | Method | Endpoint                  | Description              | Auth     |
-|--------|---------------------------|--------------------------|----------|
+|--------|---------------------------|---------------------------|----------|
 | GET    | /api/stores               | Search/browse stores     | Normal   |
 | POST   | /api/stores/rate          | Submit/update rating     | Normal   |
 | PUT    | /api/stores/:storeId/rate | Update rating            | Normal   |
-| GET    | /api/stores/:storeId/my-rating | Get user's rating  | Normal   |
+| GET    | /api/stores/:storeId/my-rating | Get user's rating   | Normal   |
 
 ### Store Owner
 | Method | Endpoint                      | Description          | Auth       |
-|--------|-------------------------------|----------------------|------------|
+|--------|--------------------------------|-----------------------|------------|
 | GET    | /api/store-owner/dashboard    | Dashboard data       | Store Owner|
 
 ## Project Folder Structure
@@ -347,7 +347,7 @@ node start-test.js
 ## Test Credentials
 
 | Role         | Email                  | Password    |
-|--------------|------------------------|-------------|
+|--------------|--------------------------|-------------|
 | Admin        | admin@example.com      | Admin@123   |
 | Normal User  | john@example.com       | User@1234   |
 | Store Owner  | bob@example.com        | Owner@123   |
@@ -355,7 +355,7 @@ node start-test.js
 ## Form Validations
 
 | Field    | Rules                                                     |
-|----------|-----------------------------------------------------------|
+|----------|-------------------------------------------------------------|
 | Name     | 20-60 characters                                          |
 | Email    | Standard email format                                     |
 | Password | 8-16 characters, 1 uppercase, 1 special character         |
@@ -365,25 +365,15 @@ node start-test.js
 ## GitHub Setup
 
 ```bash
-# Initialize git repository
+# Clone the repository
+git clone https://github.com/ashish-dhakane/Roxiler.git
+cd Roxiler
+
+# If setting up from scratch instead:
 git init
-
-# Create .gitignore
-echo "node_modules/
-backend/node_modules/
-frontend/node_modules/
-frontend/dist/
-.env
-*.log" > .gitignore
-
-# Add all files
 git add .
-
-# Commit
 git commit -m "Initial commit: Store Rating Platform"
-
-# Add remote and push
-git remote add origin https://github.com/yourusername/store-rating-platform.git
+git remote add origin https://github.com/ashish-dhakane/Roxiler.git
 git branch -M main
 git push -u origin main
 ```
