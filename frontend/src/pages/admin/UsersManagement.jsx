@@ -136,12 +136,12 @@ const roleGroups = [
           </p>
         </div>
         <div className="header-actions">
-          <button
-            className={`btn btn-sm ${showForm && formType === 'user' ? 'btn-primary' : 'btn-secondary'}`}
-            onClick={() => openFormForRole('user')}
-          >
-            + Normal User
-          </button>
+<button
+  className={`btn btn-sm ${showForm && formType === 'normal' ? 'btn-primary' : 'btn-secondary'}`}
+  onClick={() => openFormForRole('normal')}
+>
+  + Normal User
+</button>
           <button
             className={`btn btn-sm ${showForm && formType === 'admin' ? 'btn-primary' : 'btn-secondary'}`}
             onClick={() => openFormForRole('admin')}
