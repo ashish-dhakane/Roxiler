@@ -272,7 +272,7 @@ const roleGroups = [
             <select name="role" value={filters.role} onChange={handleFilterChange}>
               <option value="">All Roles</option>
               <option value="admin">Administrator</option>
-              <option value="user">Normal User</option>
+              <option value="normal">Normal User</option>
               <option value="store_owner">Store Owner</option>
             </select>
           </div>
