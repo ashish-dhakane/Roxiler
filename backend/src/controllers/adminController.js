@@ -20,8 +20,7 @@ class AdminController {
       }
 
       const { name, email, password, address, role } = req.body;
-const user = await userService.createUser(name, email, password, address, role || 'user');
-      res.status(201).json({ message: 'User created successfully.', user });
+const user = await userService.createUser(name, email, password, address, role || 'normal');      res.status(201).json({ message: 'User created successfully.', user });
     } catch (err) {
       next(err);
     }
