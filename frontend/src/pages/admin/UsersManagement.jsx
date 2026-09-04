@@ -110,11 +110,11 @@ export default function UsersManagement() {
     }
   };
 
-  const roleGroups = [
-    { key: 'user', label: 'Normal Users' },
-    { key: 'store_owner', label: 'Store Owners' },
-    { key: 'admin', label: 'Administrators' },
-  ];
+const roleGroups = [
+  { key: 'normal', label: 'Normal Users' },
+  { key: 'store_owner', label: 'Store Owners' },
+  { key: 'admin', label: 'Administrators' },
+];
 
   const groupedUsers = roleGroups.map((group) => ({
     ...group,
